@@ -24,6 +24,9 @@ return MyHomePageUI();
 }
 
 class MyHomePageUI extends State<MyHomePage>{
+
+int countNumber = 0;
+
   @override
   Widget build(BuildContext context) {
   return Scaffold(
@@ -32,11 +35,14 @@ class MyHomePageUI extends State<MyHomePage>{
       title: Text('Counter App'),
     ),
     body: Center(
-      child: Text('Counting Number'),
+      child: Text(countNumber.toString()),
     ),
     floatingActionButton: FloatingActionButton(
       child: Icon(Icons.add),
       onPressed: (){
+        setState(() {
+          countNumber = countNumber+1;
+        });
 
       },
     ),
